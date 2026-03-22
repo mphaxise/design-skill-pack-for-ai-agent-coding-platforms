@@ -1,0 +1,92 @@
+{
+  "version": "0.1.0",
+  "skills": [
+    {
+      "name": "/design-qa",
+      "objective": "Identify UX and product quality issues with reproducible evidence and severity.",
+      "required_output": [
+        "severity-ranked findings",
+        "repro steps",
+        "user impact statement"
+      ],
+      "handoff_to": [
+        "/pmf-review"
+      ],
+      "prohibited": [
+        "inventing user evidence",
+        "performing PMF claims without evidence grading"
+      ],
+      "security": {
+        "no_fabrication": true,
+        "external_fetch_allowed": false,
+        "local_write_allowed": true
+      }
+    },
+    {
+      "name": "/pmf-review",
+      "objective": "Evaluate PMF/FMF evidence quality and product positioning risks.",
+      "required_output": [
+        "evidence quality labels",
+        "fit risks",
+        "next validation actions"
+      ],
+      "handoff_to": [
+        "/ux-review",
+        "/research-brief"
+      ],
+      "prohibited": [
+        "fabricating market data",
+        "unlabeled confidence claims"
+      ],
+      "security": {
+        "no_fabrication": true,
+        "external_fetch_allowed": false,
+        "local_write_allowed": true
+      }
+    },
+    {
+      "name": "/ux-review",
+      "objective": "Produce concise UX critique tied to user outcomes and interaction quality.",
+      "required_output": [
+        "prioritized UX issues",
+        "recommended fixes",
+        "rationale tied to user outcome"
+      ],
+      "handoff_to": [
+        "/design-qa"
+      ],
+      "prohibited": [
+        "code-style-only feedback without user impact",
+        "inventing user test outcomes"
+      ],
+      "security": {
+        "no_fabrication": true,
+        "external_fetch_allowed": false,
+        "local_write_allowed": true
+      }
+    },
+    {
+      "name": "/research-brief",
+      "objective": "Generate a structured research brief that can drive next design and product decisions.",
+      "required_output": [
+        "objective",
+        "hypotheses",
+        "method plan",
+        "decision readout"
+      ],
+      "handoff_to": [
+        "/ux-review",
+        "/pmf-review"
+      ],
+      "prohibited": [
+        "inventing participant quotes",
+        "inventing citation-backed claims"
+      ],
+      "security": {
+        "no_fabrication": true,
+        "external_fetch_allowed": false,
+        "local_write_allowed": true
+      }
+    }
+  ]
+}

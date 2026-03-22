@@ -22,6 +22,29 @@ This repository starts with a Codex-first v0 and is designed to be portable to o
 - `src/`: executable helper code for MVP skill workflows
 - `tests/`: minimal automated checks
 
+## Quickstart
+Validate role contracts:
+
+```bash
+make check-contracts
+```
+
+Run tests:
+
+```bash
+make test
+```
+
+Generate a v0 research brief artifact:
+
+```bash
+PYTHONPATH=src python3 -m skillpack.cli generate-research-brief \
+  --topic "Codex-first Design Skill Pack" \
+  --audience "UX practitioners and PMs"
+```
+
+The generated file is written under `outputs/`.
+
 ## Milestones
 - First 60-90 minutes: ship Codex-first v0 scope + role boundary docs + planning-gate reviews.
 - End of day: approved implementation brief + first working MVP slice committed and pushed.

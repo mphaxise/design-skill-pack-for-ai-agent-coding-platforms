@@ -12,6 +12,9 @@ REQUIRED_SKILL_FIELDS = {
     "required_output",
     "handoff_to",
     "prohibited",
+    "personal_checkpoint_required",
+    "lens_reference",
+    "ask_gates",
     "security",
 }
 
@@ -63,6 +66,21 @@ def validate_contracts(data: Dict) -> List[str]:
             if name in seen_names:
                 errors.append(f"duplicate skill name '{name}'")
             seen_names.add(name)
+
+        if skill.get("personal_checkpoint_required") is not True:
+            errors.append(f"{prefix}.personal_checkpoint_required must be true")
+
+        ask_gates = skill.get("ask_gates")
+        if not isinstance(ask_gates, list) or len(ask_gates) < 2:
+            errors.append(f"{prefix}.ask_gates must contain at least two gates")
+
+        lens_reference = skill.get("lens_reference")
+        if not isinstance(lens_reference, str) or not lens_reference.strip():
+            errors.append(f"{prefix}.lens_reference must be a non-empty string")
+        else:
+            lens_path = repo_root() / lens_reference
+            if not lens_path.exists():
+                errors.append(f"{prefix}.lens_reference path not found: {lens_reference}")
 
         security = skill.get("security")
         if isinstance(security, dict):

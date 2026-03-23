@@ -2,5 +2,7 @@
 
 __all__ = [
     "contracts",
+    "decision_log",
+    "lens",
     "research_brief",
 ]

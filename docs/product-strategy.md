@@ -12,6 +12,7 @@ AI coding agents can generate code quickly but often miss UX rigor and product s
 - Four roles with explicit boundaries: `/design-qa`, `/pmf-review`, `/ux-review`, `/research-brief`
 - Opinionated, compact output formats with next actions
 - One production-ready flow proving real value
+- Personal operator lens so outputs reflect a specific practitioner method, not generic AI style
 
 ### Later
 - Cross-platform packs for other agent ecosystems

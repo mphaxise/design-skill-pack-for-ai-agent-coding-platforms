@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "owner": "Praneet",
+  "captured_on": "2026-03-23",
+  "optimization_priority": [
+    "user_clarity_and_trust",
+    "novelty_and_point_of_view",
+    "learning_velocity"
+  ],
+  "scope_default_when_uncertain": "present_two_options_and_force_choice",
+  "pmf_evidence_policy": {
+    "exploration_phase": "qualitative_evidence_allowed",
+    "shipping_claim_phase": "treat_fit_claim_as_assumption_unless_mixed_evidence"
+  },
+  "conflict_resolution_policy": {
+    "input_types": [
+      "user_pain_interviews",
+      "retention_or_revenue_behavior"
+    ],
+    "default": "show_both_views_then_run_one_fast_falsification_test"
+  },
+  "ux_quality_bar": "no_critical_confusion_minor_friction_allowed",
+  "risk_posture": "balanced",
+  "communication_style": "structured_and_calm",
+  "design_expression": "context_driven_with_clear_rationale",
+  "ask_policy": [
+    "ask_at_key_taste_or_strategy_gates",
+    "ask_before_irreversible_recommendations"
+  ],
+  "non_negotiables": [
+    "no_dark_patterns",
+    "no_vanity_metrics_over_real_user_value"
+  ],
+  "artifact_style": "hybrid_checklist_memo_scorecard",
+  "decision_logging_cadence": "both_daily_and_milestone",
+  "assumptions_for_ambiguous_answers": [
+    "When multiple options were selected, encode them as ordered priorities rather than strict tie-breaks.",
+    "For evidence conflicts, do not auto-resolve silently; present both interpretations and force a decision if irreversible."
+  ]
+}

@@ -16,6 +16,13 @@
         "inventing user evidence",
         "performing PMF claims without evidence grading"
       ],
+      "personal_checkpoint_required": true,
+      "lens_reference": "skills/contracts/praneet-lens.json",
+      "ask_gates": [
+        "severity_threshold_gate",
+        "residual_risk_acceptance_gate",
+        "irreversible_release_call_gate"
+      ],
       "security": {
         "no_fabrication": true,
         "external_fetch_allowed": false,
@@ -38,6 +45,13 @@
         "fabricating market data",
         "unlabeled confidence claims"
       ],
+      "personal_checkpoint_required": true,
+      "lens_reference": "skills/contracts/praneet-lens.json",
+      "ask_gates": [
+        "belief_change_signal_gate",
+        "conflict_resolution_gate",
+        "continue_narrow_reposition_gate"
+      ],
       "security": {
         "no_fabrication": true,
         "external_fetch_allowed": false,
@@ -58,6 +72,13 @@
       "prohibited": [
         "code-style-only feedback without user impact",
         "inventing user test outcomes"
+      ],
+      "personal_checkpoint_required": true,
+      "lens_reference": "skills/contracts/praneet-lens.json",
+      "ask_gates": [
+        "non_negotiable_user_feeling_gate",
+        "speed_vs_craft_tradeoff_gate",
+        "irreversible_priority_approval_gate"
       ],
       "security": {
         "no_fabrication": true,
@@ -81,6 +102,13 @@
       "prohibited": [
         "inventing participant quotes",
         "inventing citation-backed claims"
+      ],
+      "personal_checkpoint_required": true,
+      "lens_reference": "skills/contracts/praneet-lens.json",
+      "ask_gates": [
+        "decision_to_unblock_gate",
+        "two_option_scope_gate",
+        "irreversible_recommendation_approval_gate"
       ],
       "security": {
         "no_fabrication": true,

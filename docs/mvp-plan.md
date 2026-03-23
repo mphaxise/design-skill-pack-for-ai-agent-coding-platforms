@@ -14,6 +14,8 @@ Deliver the smallest useful Codex-first skill pack that proves UX-practitioner v
 - `skills/ux-review/SKILL.md`
 - `skills/research-brief/SKILL.md`
 - `src/skillpack` CLI + templates + tests for research-brief slice
+- `skills/contracts/praneet-lens.json` and mandatory personal-perspective checkpoints
+- `logs/` decision logging flow with daily + milestone traces
 
 ### Later
 - PMF and design QA executable workflows
@@ -29,6 +31,7 @@ Deliver the smallest useful Codex-first skill pack that proves UX-practitioner v
 - File-based contracts (`skills/contracts/*.json`)
 - CLI entrypoint for generation/checks
 - Markdown output artifacts with reproducible structure
+- Lens-aware output footer contract (`Praneet POV Applied`, `Assumptions`, `Needs Your Judgment`)
 
 ## Skill boundary contract (critical gap fix)
 | Skill | Primary job | Inputs | Outputs | Out-of-bounds |

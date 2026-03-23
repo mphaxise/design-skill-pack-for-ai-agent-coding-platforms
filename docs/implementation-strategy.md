@@ -12,6 +12,7 @@ The project needs an executable v0 that converts strategy into usable skill arti
 - Repository skeleton for docs, skills, templates, source, tests
 - Role-boundary specs for 4 skills
 - First vertical slice: research-brief artifact generation + policy validation
+- Personalization layer: machine-readable Praneet Lens + checkpoint asks + decision logs
 
 ### Later
 - Additional generators/checkers for PMF and UX QA outputs
@@ -29,6 +30,7 @@ The project needs an executable v0 that converts strategy into usable skill arti
 - JSON manifest for skill contracts and boundaries
 - Markdown templates and deterministic output writer
 - `unittest` + shell checks for CI-friendly validation
+- Lens loader + validator + decision-log/playbook generator
 
 ## Skill acceptance criteria (critical gap fix)
 | Skill | Required output | Handoff boundary | Prohibited behavior |

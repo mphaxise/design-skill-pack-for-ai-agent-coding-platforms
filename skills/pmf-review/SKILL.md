@@ -17,6 +17,11 @@ Evaluate PMF/FMF signal quality and identify the highest-risk product assumption
 - This skill does not perform detailed UX heuristic audits.
 - Hands interaction-level critique to `/ux-review`.
 
+## Personal Perspective Checkpoint (Mandatory)
+- Ask at strategy gate: "Which signal would actually change your mind?"
+- Ask at conflict gate: if interview pain conflicts with behavioral data, present both views and propose one falsification test.
+- Ask before irreversible recommendation: "Continue, narrow, or reposition?"
+
 ## Security constraints
 - No fabricated market stats, competitive intel, or user interview quotes.
 - Separate observed evidence from assumptions.

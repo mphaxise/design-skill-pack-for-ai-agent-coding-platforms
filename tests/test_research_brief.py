@@ -27,8 +27,15 @@ class ResearchBriefTests(unittest.TestCase):
             "## Hypotheses",
             "## Method Plan",
             "## Evidence Guardrails",
+            "## Personal Perspective Checkpoint",
             "## Open Risks",
             "## Next Actions",
+            "## Checklist",
+            "## Memo",
+            "## Scorecard",
+            "## Praneet POV Applied",
+            "## Assumptions",
+            "## Needs Your Judgment",
         ]
         for header in required_headers:
             self.assertIn(header, content)

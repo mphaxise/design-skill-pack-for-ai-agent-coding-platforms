@@ -17,6 +17,11 @@ Identify UX and product quality issues with severity and reproducible evidence.
 - This skill does not perform PMF/FMF positioning analysis.
 - Escalates strategic fit concerns to `/pmf-review`.
 
+## Personal Perspective Checkpoint (Mandatory)
+- Ask at severity gate: "What severity threshold triggers immediate fix-before-ship?"
+- Ask at risk gate: "Is current residual UX risk acceptable for this release?"
+- Ask before irreversible recommendation: "Approve this stop-ship or ship-with-known-risk call?"
+
 ## Security constraints
 - No fabricated user data, metrics, or citations.
 - Explicitly label unknowns as assumptions.

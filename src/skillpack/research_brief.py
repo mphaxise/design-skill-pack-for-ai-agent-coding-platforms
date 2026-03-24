@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict, Optional
 
-from .lens import load_lens
+from .personalization import lens_tokens, slugify
 
 
 def repo_root() -> Path:
@@ -17,11 +17,7 @@ def template_path() -> Path:
 
 
 def default_output_path(topic: str) -> Path:
-    slug = "-".join(topic.lower().split())
-    slug = "".join(ch for ch in slug if ch.isalnum() or ch == "-")
-    if not slug:
-        slug = "research-brief"
-    return repo_root() / "outputs" / f"research-brief-{slug}.md"
+    return repo_root() / "outputs" / f"research-brief-{slugify(topic)}.md"
 
 
 def generate_research_brief(
@@ -34,14 +30,9 @@ def generate_research_brief(
     lens: Optional[Dict] = None,
 ) -> str:
     text = template_path().read_text(encoding="utf-8")
-    active_lens = lens or load_lens()
-
-    optimization_priority = active_lens.get("optimization_priority", [])
-    primary_optimization = optimization_priority[0] if optimization_priority else "unknown"
-    ask_policy = active_lens.get("ask_policy", [])
-    non_negotiables = active_lens.get("non_negotiables", [])
-
-    values = {
+    values = lens_tokens(lens)
+    values.update(
+        {
         "topic": topic,
         "objective": objective
         or f"De-risk the key UX and product assumptions around '{topic}'.",
@@ -58,17 +49,6 @@ def generate_research_brief(
         "next_action_1": "Confirm participant profile and recruit list",
         "next_action_2": "Draft interview/discussion guide",
         "next_action_3": "Schedule synthesis readout with decision owners",
-        "lens_primary_optimization": primary_optimization,
-        "lens_scope_default": active_lens.get("scope_default_when_uncertain", "unknown"),
-        "lens_evidence_bar": active_lens.get("pmf_evidence_policy", {}).get(
-            "shipping_claim_phase",
-            "unknown",
-        ),
-        "lens_risk_posture": active_lens.get("risk_posture", "unknown"),
-        "lens_non_negotiable_1": non_negotiables[0] if len(non_negotiables) > 0 else "unknown",
-        "lens_non_negotiable_2": non_negotiables[1] if len(non_negotiables) > 1 else "unknown",
-        "lens_ask_policy_1": ask_policy[0] if len(ask_policy) > 0 else "unknown",
-        "lens_ask_policy_2": ask_policy[1] if len(ask_policy) > 1 else "unknown",
         "pov_applied_1": "Decision framing prioritizes clarity and user trust before expansion.",
         "pov_applied_2": "Fit claims are explicitly marked as assumptions unless mixed evidence exists.",
         "pov_applied_3": "Options are constrained to a forced two-path decision when scope is uncertain.",
@@ -77,6 +57,7 @@ def generate_research_brief(
         "judgment_1": "Confirm which decision this brief must unblock in this cycle.",
         "judgment_2": "Approve one of the two proposed strategy options before implementation.",
     }
+    )
     return text.format(**values)
 
 

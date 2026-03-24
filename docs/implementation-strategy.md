@@ -11,7 +11,7 @@ The project needs an executable v0 that converts strategy into usable skill arti
 ### MVP
 - Repository skeleton for docs, skills, templates, source, tests
 - Role-boundary specs for 4 skills
-- First vertical slice: research-brief artifact generation + policy validation
+- Executable slice: artifact generation for `/research-brief`, `/design-qa`, `/pmf-review`, `/ux-review`
 - Personalization layer: machine-readable Praneet Lens + checkpoint asks + decision logs
 
 ### Later

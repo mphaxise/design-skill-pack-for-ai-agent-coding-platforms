@@ -13,7 +13,7 @@ Deliver the smallest useful Codex-first skill pack that proves UX-practitioner v
 - `skills/pmf-review/SKILL.md`
 - `skills/ux-review/SKILL.md`
 - `skills/research-brief/SKILL.md`
-- `src/skillpack` CLI + templates + tests for research-brief slice
+- `src/skillpack` CLI + templates + tests for all four skill output slices
 - `skills/contracts/praneet-lens.json` and mandatory personal-perspective checkpoints
 - `logs/` decision logging flow with daily + milestone traces
 

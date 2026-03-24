@@ -47,6 +47,22 @@ PYTHONPATH=src python3 -m skillpack.cli generate-research-brief \
 
 The generated file is written under `outputs/`.
 
+Generate the other three skill artifacts:
+
+```bash
+PYTHONPATH=src python3 -m skillpack.cli generate-design-qa \
+  --feature "Onboarding Flow" \
+  --target-user "New users"
+
+PYTHONPATH=src python3 -m skillpack.cli generate-pmf-review \
+  --product "Design Skill Pack" \
+  --segment "UX practitioners"
+
+PYTHONPATH=src python3 -m skillpack.cli generate-ux-review \
+  --flow "Activation Flow" \
+  --target-user "Product builders"
+```
+
 Log a design/product decision:
 
 ```bash
